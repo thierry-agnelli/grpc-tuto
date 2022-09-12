@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package grpctuto;
+
+// Service Tuto GRPC
+service GrpcTuto {
+    // Response to a front request
+    rpc GrpcTutoReply(FrontRequest) returns (ReplyToFront) {}
+}
+
+// Request message with a base string and a number
+message FrontRequest {
+    string base  = 1;
+    int32 number = 2;
+}
+
+// Response with added string to base and incremented number
+message ReplyToFront {
+    string reply = 1;
+    int32 incNum = 2;
+}
